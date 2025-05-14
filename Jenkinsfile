@@ -22,14 +22,14 @@ pipeline{
         stage ("Plan"){
             steps {
                 catchError(catchInterruptions: false, buildResult: 'FAILURE', message: 'Moving to second stage regardless of the build status...', stageResult: 'SUCCESS') {
-                    sh "terraform plan "
+                    sh "terraform pla "
                 }
             }
         }
         stage ("Create"){
             steps {
                 catchError(catchInterruptions: false,buildResult: 'FAILURE',  message: 'Moving to second stage regardless of the build status...', stageResult: 'FAILURE') {
-                    sh "terraform plan "
+                    sh "terraform apply --auto-approve "
                 }
 
             }
