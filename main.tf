@@ -14,11 +14,11 @@ module "eks" {
   subnet_ids   = module.networking.public-subnets
   cluster-role = module.iamroles.cluster-role-arn
 }
-module "eks-node-group"{
-  source = "./modules/Eks-worker-node"
-  clustername = module.eks.cluster-name
-  node_role_arn = module.iamroles.worker-node-role-arn
-  subnet_ids = module.networking.public-subnets
+module "eks-node-group" {
+  source          = "./modules/Eks-worker-node"
+  clustername     = module.eks.cluster-name
+  node_role_arn   = module.iamroles.worker-node-role-arn
+  subnet_ids      = module.networking.public-subnets
   node_group_name = var.node_group_name
 }
 # module "eks-addons" {

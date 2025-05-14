@@ -14,9 +14,9 @@ variable "private_subnet_cidr_blocks" {
   default = ["30.0.3.0/24", "30.0.4.0/24"]
 }
 variable "node_group_name" {
-  type = string
+  type        = string
   description = "the name of the node group ..."
-  default = "Eks-node-group"
+  default     = "Eks-node-group"
 }
 
 # variable "subnet_ids" {
@@ -25,6 +25,8 @@ variable "node_group_name" {
 # variable "cluster-role" {
 #   type = string
 # }
+
+
 #iam role configuration....
 variable "managed_policy_arns" {
   type        = list(string)
