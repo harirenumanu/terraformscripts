@@ -22,7 +22,7 @@ pipeline{
         stage ("Plan"){
             steps {
                 catchError(catchInterruptions: false, buildResult: 'FAILURE', message: 'Moving to second stage regardless of the build status...', stageResult: 'SUCCESS') {
-                    sh "terraform pla "
+                    sh "terraform plan "
                 }
             }
         }
