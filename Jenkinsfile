@@ -12,7 +12,7 @@ pipeline{
         stage("Init"){
                 when {
                 expression {
-                    params.initialization == true // Check if the parameter RUN_DEPLOY is true
+                    params.initialization == 'true' // Check if the parameter RUN_DEPLOY is true
                 }
             }
                 steps {
