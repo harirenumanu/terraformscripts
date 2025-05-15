@@ -1,13 +1,13 @@
-# module "networking" {
-#   source     = "./modules/networking"
-#   cidr_block = var.cidr_block
-# }
+module "networking" {
+  source     = "./modules/networking"
+  cidr_block = var.cidr_block
+}
 
-# module "iamroles" {
-#   source              = "./modules/iamroles"
-#   managed_policy_arns = var.managed_policy_arns
-#   trusted_policy      = var.trusted_policy
-# }
+module "iamroles" {
+  source              = "./modules/iamroles"
+  managed_policy_arns = var.managed_policy_arns
+  trusted_policy      = var.trusted_policy
+}
 
 # module "eks" {
 #   source       = "./modules/Eks-cluster"
